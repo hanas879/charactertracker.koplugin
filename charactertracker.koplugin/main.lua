@@ -1435,11 +1435,11 @@ function CharacterTracker:showCharacterDetail(character)
         table.insert(text_parts, sep .. "\n")
         for _i, rel in ipairs(outgoing) do
             local label = getRelationshipLabel(rel.type)
-            table.insert(text_parts, "  → " .. rel.target .. " (" .. label .. ")\n")
+            table.insert(text_parts, "The " .. string.lower(label) .. " is: " .. rel.target .. "\n")
         end
         for _i, rel in ipairs(incoming) do
             local label = getRelationshipLabel(rel.type)
-            table.insert(text_parts, "  ← " .. rel.source .. " (" .. label .. ")\n")
+            table.insert(text_parts, rel.source .. "'s " .. string.lower(label) .. "\n")
         end
     end
 
